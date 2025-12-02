@@ -1,0 +1,386 @@
+/* Variables de Color */
+:root {
+    --color-primary: #003366; /* Azul oscuro del header y footer */
+    --color-secondary: #FFCC00; /* Amarillo/Naranja de los botones/tarjetas */
+    --color-text-light: #ffffff;
+    --color-text-dark: #333333;
+    --color-background: #f4f4f4;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- Header y Navegación --- */
+
+.main-header {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 10px 0;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+}
+
+/* Ocultar el checkbox que controla el menú */
+#menu-toggle-checkbox {
+    display: none; 
+}
+
+/* Lista de enlaces */
+.main-nav .nav-links { 
+    list-style: none;
+    display: flex;
+}
+
+.main-nav .nav-links li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.main-nav .nav-links li a:hover,
+.main-nav .nav-links li a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+/* El menú toggle (el label) está oculto por defecto */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- Sección Hero (Principal) --- */
+
+.hero {
+    background: var(--color-primary) url('hero-bg.jpg') no-repeat center center/cover; /* Reemplazar 'hero-bg.jpg' con la imagen de fondo */
+    min-height: 400px;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    position: relative;
+    /* Oscurecer la imagen de fondo */
+    box-shadow: inset 0 0 0 1000px rgba(0,51,102, 0.7); 
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 strong {
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, opacity 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-preinscripcion {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    margin-top: 20px;
+}
+
+.btn-preinscripcion:hover {
+    background-color: #ffda47;
+}
+
+/* --- Sección de Orientaciones --- */
+
+.orientaciones-section {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.orientaciones-section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.orientaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.btn-card {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-card:hover {
+    opacity: 0.9;
+}
+
+/* --- Sección de Contacto en Home --- */
+
+.contacto-home-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px;
+    padding: 20px 15px 40px;
+}
+
+.contacto-card {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.contacto-card h2 {
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.contacto-info p, 
+.contacto-card p {
+    margin-bottom: 8px;
+}
+
+/* Estilo para los enlaces de redes sociales */
+.social-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-top: 10px; 
+    display: inline-block;
+}
+
+.social-link:hover {
+    color: #ffda47;
+}
+
+.mapa-card {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 250px; 
+}
+
+.mapa-card iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --- Footer --- */
+
+.main-footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+/* --- Estilos para Páginas Secundarias --- */
+
+.page-content {
+    padding: 40px 15px;
+    min-height: 50vh;
+}
+
+.page-content h2 {
+    margin-bottom: 25px;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/* Estilos para la página de Contacto */
+.datos-contacto-full {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.datos-contacto-full h3 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para Horarios y Redes Sociales en Contacto */
+.horarios-info, .redes-sociales {
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.horarios-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.horarios-info li {
+    margin-bottom: 5px;
+}
+
+.redes-sociales a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: var(--color-secondary);
+}
+
+.mapa-grande {
+    height: 350px; 
+    background-color: #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.mapa-grande iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para la página de Orientaciones */
+.orientacion-detail {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-left: 5px solid var(--color-primary);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.orientacion-detail h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.orientacion-detail h4 {
+    color: var(--color-secondary);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.orientacion-detail ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+
+/* --- Media Queries para Responsividad (Vista Móvil) --- */
+
+@media (max-width: 768px) {
+    
+    /* Navegación Móvil */
+    
+    /* Mostrar el label del menú toggle */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Ocultar el menú por defecto en móvil */
+    .main-nav .nav-links {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Debajo del header */
+        left: 0;
+        background-color: var(--color-primary);
+        z-index: 10;
+        padding-bottom: 10px;
+    }
+
+    /* Regla CLAVE: Si el checkbox está marcado, MUESTRA el menú */
+    #menu-toggle-checkbox:checked ~ .nav-links {
+        display: flex; 
+    }
+    
+    .main-nav .nav-links li a {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Home Contacto */
+    .contacto-home-section {
+        grid-template-columns: 1fr; /* Apilar en móvil */
+    }
+
+    /* Contacto Page */
+    .mapa-grande {
+        height: 250px; 
+    }
+}
